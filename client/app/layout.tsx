@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Athanasa",
-  description: "Built on structure. Designed for permanence.",
+  title: "Athanasa - Built on structure. Designed for permanence.",
+  description:
+    "Design, build, and scale modern web experiences. Athanasa provides digital systems, data visualization, and user interface tools that are developed with a focus on future-ready security, elegance, and performance.",
 };
 
 export default function RootLayout({
