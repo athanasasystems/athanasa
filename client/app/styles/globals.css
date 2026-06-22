@@ -6,19 +6,16 @@
   --background: #ffffff;
   --foreground: #000000;
 
-  --border-default: #eeeeee;
+  --muted: #e0e0e0;
+  --muted-foreground: #7a7a7a;
 }
 
 [data-theme="dark"] {
   --background: #000000;
   --foreground: #ffffff;
 
-  --border-default: #333333;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --muted: #28282d;
+  --muted-foreground: #b3b3b3;
 }
 
 body {

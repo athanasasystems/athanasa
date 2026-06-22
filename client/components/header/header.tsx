@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { headerLinksConfig } from "@/configs/header-links-config";
 
 const navItemClass =
-  "group relative before:content-[''] before:absolute before:inset-0.5 before:bg-transparent before:rounded-[1.5625rem] before:cursor-pointer hover:before:border hover:before:border-(--border-default) hover:before:opacity-100";
+  "group relative text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-200";
 
-const navLinkClass = "relative py-2 px-3 leading-normal cursor-pointer";
+const navLinkClass =
+  "relative flex items-center gap-0.75 py-1.5 pl-3 pr-2 leading-normal cursor-pointer";
 
 export const Header = () => {
   return (
@@ -15,23 +17,17 @@ export const Header = () => {
           </div>
           <nav className="flex w-full">
             <ul className="flex items-center flex-1 list-none p-0 m-0 gap-4">
-              <li className={navItemClass}>
-                <button className={navLinkClass}>Products</button>
-              </li>
-              <li className={navItemClass}>
-                <button className={navLinkClass}>Resources</button>
-              </li>
-              <li className={navItemClass}>
-                <button className={navLinkClass}>Solutions</button>
-              </li>
-              <li className={navItemClass}>
-                <Link
-                  href={"/pricing"}
-                  className={`flex items-center ${navLinkClass}`}
-                >
-                  Pricing
-                </Link>
-              </li>
+              {headerLinksConfig.map((link) => (
+                <li key={link.name} className={navItemClass}>
+                  {link.sections ? (
+                    <button className={navLinkClass}>{link.name}</button>
+                  ) : link.href ? (
+                    <Link href={link.href} className={navLinkClass}>
+                      {link.name}
+                    </Link>
+                  ) : null}
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
