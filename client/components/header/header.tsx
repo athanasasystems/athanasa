@@ -33,13 +33,13 @@ export const Header = () => {
           </div>
           <nav className="flex w-full">
             <ul className="flex items-center flex-1 list-none p-0 m-0 gap-4">
-              {headerLinksConfig.map((link) => (
-                <li key={link.name} className={navItemClass}>
-                  {link.sections ? (
-                    <button className={navLinkClass}>{link.name}</button>
-                  ) : link.href ? (
-                    <Link href={link.href} className={navLinkClass}>
-                      {link.name}
+              {headerLinksConfig.sections.map((section) => (
+                <li key={section.key} className={navItemClass}>
+                  {section.sections ? (
+                    <button className={navLinkClass}>{section.title}</button>
+                  ) : section.href ? (
+                    <Link href={section.href} className={navLinkClass}>
+                      {section.title}
                     </Link>
                   ) : null}
                 </li>
