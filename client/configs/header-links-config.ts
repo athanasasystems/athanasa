@@ -103,9 +103,9 @@ export const headerLinksConfig: HeaderLinksConfig = {
       ],
     },
     {
-      key: "solutions",
-      title: "Solutions",
-      href: "/solutions",
+      key: "enterprise",
+      title: "Enterprise",
+      href: "/enterprise",
       hasTargetBlank: false,
       hasRelNoopener: false,
     },

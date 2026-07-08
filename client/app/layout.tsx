@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./styles/globals.css";
 import ClientLayout from "./client-layout";
 
@@ -13,8 +13,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Athanasa - Built on structure. Designed for permanence.",
+  title: "Athanasa",
   description:
     "Design, build, and scale modern web experiences. Athanasa provides digital systems, data visualization, and user interface tools that are developed with a focus on future-ready security, elegance, and performance.",
 };
@@ -27,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
         <ClientLayout>{children}</ClientLayout>
       </body>

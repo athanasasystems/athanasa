@@ -1,5 +1,6 @@
 "use client";
 
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
 export default function ClientLayout({
@@ -13,6 +14,7 @@ export default function ClientLayout({
       <main className="flex flex-col items-start justify-start flex-1 w-full">
         {children}
       </main>
+      <Footer />
     </div>
   );
 }
