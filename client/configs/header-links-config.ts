@@ -1,3 +1,5 @@
+import { ChevronDownIcon } from "lucide-react";
+
 export interface Section {
   key: string;
   title: string;
@@ -6,6 +8,7 @@ export interface Section {
   hasRelNoopener?: boolean; // Optional property to indicate if the link should have rel="noopener"
   sections?: Section[];
   links?: LinkItem[];
+  icon?: React.ElementType; // Optional property to include an icon for the section
 }
 
 export interface LinkItem {
@@ -25,6 +28,7 @@ export const headerLinksConfig: HeaderLinksConfig = {
     {
       key: "products",
       title: "Products",
+      icon: ChevronDownIcon,
       sections: [
         {
           key: "design-system",
@@ -65,6 +69,7 @@ export const headerLinksConfig: HeaderLinksConfig = {
     {
       key: "resources",
       title: "Resources",
+      icon: ChevronDownIcon,
       sections: [
         {
           key: "learn",

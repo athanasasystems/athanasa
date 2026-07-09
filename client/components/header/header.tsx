@@ -3,7 +3,13 @@ import { headerLinksConfig } from "@/configs/header-links-config";
 import React from "react";
 
 const navItemClass =
-  "group relative text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-200";
+  "group relative text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
+
+const navButtonClass =
+  "relative flex items-center pt-2 pr-6 pb-2 pl-3 text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
+
+const navIconClass =
+  "absolute top-1/2 right-0 -translate-y-1/2 rotate-0 w-4 h-4 stroke-3 ml-1 transition-transform ease-in-out duration-200 group-hover:rotate-180";
 
 const navLinkClass =
   "relative flex items-center gap-0.75 py-1.5 pl-3 pr-2 leading-normal cursor-pointer";
@@ -36,7 +42,14 @@ export const Header = () => {
               {headerLinksConfig.sections.map((section) => (
                 <li key={section.key} className={navItemClass}>
                   {section.sections ? (
-                    <button className={navLinkClass}>{section.title}</button>
+                    <button className={navButtonClass}>
+                      {section.title}
+                      {section.icon && (
+                        <span className={navIconClass}>
+                          <section.icon size={16} />
+                        </span>
+                      )}
+                    </button>
                   ) : section.href ? (
                     <Link href={section.href} className={navLinkClass}>
                       {section.title}
