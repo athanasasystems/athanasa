@@ -6,13 +6,13 @@ const navItemClass =
   "group relative text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
 
 const navButtonClass =
-  "relative flex items-center pt-2 pr-6 pb-2 pl-3 text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
+  "flex items-center gap-0.75 py-1.5 px-3 text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
 
 const navIconClass =
-  "absolute top-1/2 right-0 -translate-y-1/2 rotate-0 w-4 h-4 stroke-3 ml-1 transition-transform ease-in-out duration-200 group-hover:rotate-180";
+  "rotate-0 transition-transform ease-in-out duration-200 group-hover:rotate-180";
 
 const navLinkClass =
-  "relative flex items-center gap-0.75 py-1.5 pl-3 pr-2 leading-normal cursor-pointer";
+  "flex items-center gap-0.75 py-1.5 px-3 leading-normal cursor-pointer";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -38,7 +38,7 @@ export const Header = () => {
             <Link href={"/"}>{/* Add logo or brand name here */}</Link>
           </div>
           <nav className="flex w-full">
-            <ul className="flex items-center flex-1 list-none p-0 m-0 gap-4">
+            <ul className="flex items-center flex-1 list-none p-0 m-0 gap-2">
               {headerLinksConfig.sections.map((section) => (
                 <li key={section.key} className={navItemClass}>
                   {section.sections ? (
@@ -46,7 +46,7 @@ export const Header = () => {
                       {section.title}
                       {section.icon && (
                         <span className={navIconClass}>
-                          <section.icon size={16} />
+                          <section.icon size={14} />
                         </span>
                       )}
                     </button>
