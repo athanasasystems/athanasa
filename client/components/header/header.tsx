@@ -1,47 +1,31 @@
 import Link from "next/link";
 import { headerLinksConfig } from "@/configs/header-links-config";
-import React from "react";
 
 const navItemClass =
-  "group relative text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
+  "text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
 
 const navButtonClass =
-  "cursor-pointer flex items-center gap-0.75 h-8 px-3 text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
+  "flex h-8 cursor-pointer items-center gap-0.75 px-3 text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
 
 const navLinkClass =
-  "flex items-center gap-0.75 h-8 px-3 leading-normal cursor-pointer";
+  "flex h-8 cursor-pointer items-center gap-0.75 px-3 leading-normal";
 
 const loginLinkClass =
-  "flex items-center h-8 px-3 rounded-md border border-(--border) text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
+  "flex h-9 cursor-pointer items-center gap-0.75 rounded-full bg-(--muted) px-3 leading-normal text-(--foreground) font-medium transition-colors duration-100 hover:bg-(--muted)/90";
 
-const signupButtonClass =
-  "flex items-center h-8 px-3 rounded-md bg-(--primary) text-(--primary-foreground) hover:opacity-90 transition-opacity duration-100";
+const signupLinkClass =
+  "flex h-9 cursor-pointer items-center gap-0.75 rounded-full bg-(--primary) px-3 leading-normal text-(--primary-foreground) font-medium transition-colors duration-100 hover:bg-(--primary)/90";
 
 export const Header = () => {
-  const [isScrolled, setIsScrolled] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <header
-      className={`h-(--header-height) w-full transition-all duration-300 bg-background sticky top-0 z-40 ${isScrolled ? "after:content-[''] after:absolute after:h-px after:w-full after:bg-(--border) after:bottom-0" : ""}`}
-    >
-      <div className="flex items-center justify-between h-full max-w-360 mx-auto px-6">
+    <header className="sticky top-0 z-40 h-(--header-height) w-full bg-background transition-all duration-300">
+      <div className="mx-auto flex h-full max-w-360 items-center justify-between px-8">
         <div className="flex items-center">
           <div className="flex items-center gap-2">
             <Link href={"/"}>{/* Add logo or brand name here */}</Link>
           </div>
-          <nav className="flex w-full">
-            <ul className="flex items-center flex-1 list-none p-0 m-0 gap-2">
+          <nav className="hidden lg:flex">
+            <ul className="m-0 flex flex-1 list-none items-center gap-2 p-0">
               {headerLinksConfig.sections.map((section) => (
                 <li key={section.key} className={navItemClass}>
                   {section.sections ? (
@@ -56,11 +40,11 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className="flex items-center gap-3">
-          <Link href={"/login"} className={loginLinkClass}>
+        <div className="flex items-center gap-2">
+          <Link href="/login" className={loginLinkClass}>
             Login
           </Link>
-          <Link href={"/signup"} className={signupButtonClass}>
+          <Link href="/signup" className={signupLinkClass}>
             Sign Up
           </Link>
         </div>

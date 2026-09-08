@@ -4,19 +4,19 @@ export interface Section {
   key: string;
   title: string;
   href?: string;
-  hasTargetBlank?: boolean; // Optional property to indicate if the link should open in a new tab
-  hasRelNoopener?: boolean; // Optional property to indicate if the link should have rel="noopener"
+  hasTargetBlank?: boolean;
+  hasRelNoopener?: boolean;
   sections?: Section[];
   links?: LinkItem[];
-  icon?: React.ElementType; // Optional property to include an icon for the section
+  icon?: React.ElementType;
 }
 
 export interface LinkItem {
   key: string;
   name: string;
   href?: string;
-  hasTargetBlank?: boolean; // Optional property to indicate if the link should open in a new tab
-  hasRelNoopener?: boolean; // Optional property to indicate if the link should have rel="noopener"
+  hasTargetBlank?: boolean;
+  hasRelNoopener?: boolean;
 }
 
 export interface HeaderLinksConfig {
@@ -26,13 +26,102 @@ export interface HeaderLinksConfig {
 export const headerLinksConfig: HeaderLinksConfig = {
   sections: [
     {
+      key: "platform",
+      title: "Platform",
+      icon: ChevronDownIcon,
+      sections: [
+        {
+          key: "cloud",
+          title: "Athanasa Cloud",
+          links: [
+            {
+              key: "overview",
+              name: "Overview",
+              href: "/platform",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+            {
+              key: "deployments",
+              name: "Deployments",
+              href: "/platform/deployments",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+            {
+              key: "compute",
+              name: "Compute",
+              href: "/platform/compute",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+            {
+              key: "storage",
+              name: "Storage",
+              href: "/platform/storage",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+            {
+              key: "databases",
+              name: "Databases",
+              href: "/platform/databases",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+          ],
+        },
+        {
+          key: "infrastructure",
+          title: "Infrastructure",
+          links: [
+            {
+              key: "domains",
+              name: "Domains",
+              href: "/platform/domains",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+            {
+              key: "edge-network",
+              name: "Edge Network",
+              href: "/platform/edge-network",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+            {
+              key: "observability",
+              name: "Observability",
+              href: "/platform/observability",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+          ],
+        },
+      ],
+    },
+
+    {
       key: "products",
       title: "Products",
       icon: ChevronDownIcon,
       sections: [
         {
-          key: "design-system",
-          title: "Design System",
+          key: "security",
+          title: "Security",
+          links: [
+            {
+              key: "kleisa",
+              name: "Kleisa",
+              href: "/kleisa",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+          ],
+        },
+        {
+          key: "developer-tools",
+          title: "Developer Tools",
           links: [
             {
               key: "sophiajs",
@@ -41,6 +130,19 @@ export const headerLinksConfig: HeaderLinksConfig = {
               hasTargetBlank: false,
               hasRelNoopener: false,
             },
+            {
+              key: "loftycharts",
+              name: "Lofty Charts",
+              href: "/loftycharts",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+          ],
+        },
+        {
+          key: "design",
+          title: "Design",
+          links: [
             {
               key: "omeliaui",
               name: "Omelia UI",
@@ -55,17 +157,11 @@ export const headerLinksConfig: HeaderLinksConfig = {
               hasTargetBlank: false,
               hasRelNoopener: false,
             },
-            {
-              key: "loftycharts",
-              name: "Lofty Charts",
-              href: "/loftycharts",
-              hasTargetBlank: false,
-              hasRelNoopener: false,
-            },
           ],
         },
       ],
     },
+
     {
       key: "resources",
       title: "Resources",
@@ -77,18 +173,31 @@ export const headerLinksConfig: HeaderLinksConfig = {
           links: [
             {
               key: "docs",
-              name: "Docs",
+              name: "Documentation",
               href: "/docs",
               hasTargetBlank: false,
               hasRelNoopener: false,
             },
             {
-              key: "about",
-              name: "About",
-              href: "/about",
+              key: "knowledge-base",
+              name: "Knowledge Base",
+              href: "/knowledge-base",
               hasTargetBlank: false,
               hasRelNoopener: false,
             },
+            {
+              key: "guides",
+              name: "Guides",
+              href: "/guides",
+              hasTargetBlank: false,
+              hasRelNoopener: false,
+            },
+          ],
+        },
+        {
+          key: "company-resources",
+          title: "Updates",
+          links: [
             {
               key: "blog",
               name: "Blog",
@@ -103,10 +212,18 @@ export const headerLinksConfig: HeaderLinksConfig = {
               hasTargetBlank: false,
               hasRelNoopener: false,
             },
+            {
+              key: "status",
+              name: "Status",
+              href: "https://status.athanasa.com",
+              hasTargetBlank: true,
+              hasRelNoopener: true,
+            },
           ],
         },
       ],
     },
+
     {
       key: "enterprise",
       title: "Enterprise",
@@ -114,6 +231,7 @@ export const headerLinksConfig: HeaderLinksConfig = {
       hasTargetBlank: false,
       hasRelNoopener: false,
     },
+
     {
       key: "pricing",
       title: "Pricing",

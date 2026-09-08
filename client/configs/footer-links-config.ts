@@ -8,8 +8,8 @@ export interface LinkItem {
   key: string;
   name: string;
   href: string;
-  hasTargetBlank?: boolean; // Optional property to indicate if the link should open in a new tab
-  hasRelNoopener?: boolean; // Optional property to indicate if the link should have rel="noopener"
+  hasTargetBlank?: boolean;
+  hasRelNoopener?: boolean;
 }
 
 export interface FooterLinksConfig {
@@ -19,16 +19,65 @@ export interface FooterLinksConfig {
 export const footerLinksConfig: FooterLinksConfig = {
   sections: [
     {
-      key: "products",
-      title: "Products",
+      key: "platform",
+      title: "Platform",
       links: [
         {
-          key: "plasios",
-          name: "Plasios",
-          href: "/plasios",
+          key: "overview",
+          name: "Overview",
+          href: "/platform",
           hasTargetBlank: false,
           hasRelNoopener: false,
         },
+        {
+          key: "deployments",
+          name: "Deployments",
+          href: "/platform/deployments",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
+        {
+          key: "compute",
+          name: "Compute",
+          href: "/platform/compute",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
+        {
+          key: "storage",
+          name: "Storage",
+          href: "/platform/storage",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
+        {
+          key: "databases",
+          name: "Databases",
+          href: "/platform/databases",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
+        {
+          key: "domains",
+          name: "Domains",
+          href: "/platform/domains",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
+        {
+          key: "edge-network",
+          name: "Edge Network",
+          href: "/platform/edge-network",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
+      ],
+    },
+
+    {
+      key: "products",
+      title: "Products",
+      links: [
         {
           key: "kleisa",
           name: "Kleisa",
@@ -66,21 +115,29 @@ export const footerLinksConfig: FooterLinksConfig = {
         },
       ],
     },
+
     {
       key: "resources",
       title: "Resources",
       links: [
         {
           key: "docs",
-          name: "Docs",
+          name: "Documentation",
           href: "/docs",
           hasTargetBlank: false,
           hasRelNoopener: false,
         },
         {
-          key: "about",
-          name: "About",
-          href: "/about",
+          key: "knowledge-base",
+          name: "Knowledge Base",
+          href: "/knowledge-base",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
+        {
+          key: "guides",
+          name: "Guides",
+          href: "/guides",
           hasTargetBlank: false,
           hasRelNoopener: false,
         },
@@ -99,18 +156,26 @@ export const footerLinksConfig: FooterLinksConfig = {
           hasRelNoopener: false,
         },
         {
-          key: "knowledge-base",
-          name: "Knowledge Base",
-          href: "/knowledge-base",
+          key: "help",
+          name: "Help",
+          href: "/help",
           hasTargetBlank: false,
           hasRelNoopener: false,
         },
       ],
     },
+
     {
       key: "company",
       title: "Company",
       links: [
+        {
+          key: "about",
+          name: "About",
+          href: "/about",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
         {
           key: "open-source",
           name: "Open Source",
@@ -133,25 +198,26 @@ export const footerLinksConfig: FooterLinksConfig = {
           hasRelNoopener: false,
         },
         {
-          key: "pricing",
-          name: "Pricing",
-          href: "/pricing",
-          hasTargetBlank: false,
-          hasRelNoopener: false,
-        },
-        {
-          key: "help",
-          name: "Help",
-          href: "/help",
+          key: "contact",
+          name: "Contact",
+          href: "/contact",
           hasTargetBlank: false,
           hasRelNoopener: false,
         },
       ],
     },
+
     {
       key: "legal",
       title: "Legal",
       links: [
+        {
+          key: "imprint",
+          name: "Imprint",
+          href: "/imprint",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
         {
           key: "privacy-policy",
           name: "Privacy Policy",
@@ -182,6 +248,7 @@ export const footerLinksConfig: FooterLinksConfig = {
         },
       ],
     },
+
     {
       key: "social",
       title: "Social",

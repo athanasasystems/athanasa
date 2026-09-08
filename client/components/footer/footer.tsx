@@ -1,25 +1,23 @@
 import Link from "next/link";
 import { footerLinksConfig } from "@/configs/footer-links-config";
-import { LanguageSwitcher } from "../language/language-switcher";
-import { StatusLink } from "../status/status-link";
-import { ThemeSwitcher } from "../theme/theme-switcher";
+import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
-const sectionTitleClass = "text-sm font-medium text-(--foreground) mb-4";
+const sectionTitleClass = "mb-3 font-medium text-(--muted-foreground)";
 
 const linkClass =
-  "inline-flex h-fit text-sm text-(--muted-foreground) hover:text-(--foreground) transition-colors duration-100";
+  "text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
 
 export const Footer = () => {
   return (
-    <footer className="w-full border-t border-(--border) bg-background text-(--muted-foreground)">
-      <div className="max-w-360 mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+    <footer className="mt-30 mb-8 w-full bg-background text-(--muted-foreground)">
+      <div className="mx-auto max-w-360 px-8 pt-12">
+        <div className="grid grid-cols-1 gap-8 min-[420px]:grid-cols-2 sm:grid-cols-3 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-5">
           {footerLinksConfig.sections.map((section) => (
             <div key={section.key}>
               <h3 className={sectionTitleClass}>{section.title}</h3>
-              <ul className="flex flex-col gap-2 list-none p-0 m-0">
+              <ul className="m-0 flex list-none flex-col gap-4 p-0">
                 {section.links.map((link) => (
-                  <li key={link.key} className="flex h-7 items-center">
+                  <li key={link.key}>
                     <Link
                       href={link.href}
                       className={linkClass}
@@ -36,14 +34,11 @@ export const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-between items-center mt-12">
-          <div className="flex items-center gap-3">
-            <StatusLink />
-          </div>
-          <div className="flex items-center gap-3">
-            <ThemeSwitcher />
-            <LanguageSwitcher />
-          </div>
+        <div className="mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-(--foreground)">
+            Athanasa &copy; 2025-{new Date().getFullYear()}
+          </p>
+          <ThemeSwitcher />
         </div>
       </div>
     </footer>
