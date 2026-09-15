@@ -113,6 +113,13 @@ export const footerLinksConfig: FooterLinksConfig = {
           hasTargetBlank: false,
           hasRelNoopener: false,
         },
+        {
+          key: "omorfia-font",
+          name: "Omorfia Font",
+          href: "/omorfia-font",
+          hasTargetBlank: false,
+          hasRelNoopener: false,
+        },
       ],
     },
 

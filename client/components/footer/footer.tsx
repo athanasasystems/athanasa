@@ -5,7 +5,7 @@ import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 const sectionTitleClass = "mb-3 font-medium text-(--muted-foreground)";
 
 const linkClass =
-  "text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
+  "text-(--foreground) font-medium transition-colors duration-100 hover:text-(--muted-foreground)";
 
 export const Footer = () => {
   return (

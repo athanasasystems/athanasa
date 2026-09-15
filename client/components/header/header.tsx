@@ -5,10 +5,10 @@ const navItemClass =
   "text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
 
 const navButtonClass =
-  "flex h-8 cursor-pointer items-center gap-0.75 px-3 text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
+  "flex h-8 cursor-pointer items-center gap-0.75 px-3 font-medium text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
 
 const navLinkClass =
-  "flex h-8 cursor-pointer items-center gap-0.75 px-3 leading-normal";
+  "flex h-8 cursor-pointer items-center gap-0.75 px-3 font-medium leading-normal";
 
 const loginLinkClass =
   "flex h-9 cursor-pointer items-center gap-0.75 rounded-full border border-(--border) bg-(--accent) px-5 leading-normal text-(--foreground) font-medium transition-colors duration-100 hover:bg-(--accent)/90";
