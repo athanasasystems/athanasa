@@ -2,10 +2,10 @@ import Link from "next/link";
 import { footerLinksConfig } from "@/configs/footer-links-config";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
-const sectionTitleClass = "mb-3 font-medium text-(--muted-foreground)";
+const sectionTitleClass = "mb-3 font-medium text-(--foreground)";
 
 const linkClass =
-  "text-(--foreground) font-medium transition-colors duration-100 hover:text-(--muted-foreground)";
+  "text-(--muted-foreground) font-medium transition-colors duration-100 hover:text-(--foreground)";
 
 export const Footer = () => {
   return (

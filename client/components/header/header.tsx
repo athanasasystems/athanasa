@@ -1,11 +1,12 @@
+import React from "react";
 import Link from "next/link";
 import { headerLinksConfig } from "@/configs/header-links-config";
 
 const navItemClass =
-  "text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
+  "text-(--muted-foreground) transition-colors duration-100 hover:text-(--foreground)";
 
 const navButtonClass =
-  "flex h-8 cursor-pointer items-center gap-0.75 px-3 font-medium text-(--foreground) transition-colors duration-100 hover:text-(--muted-foreground)";
+  "flex h-8 cursor-pointer items-center gap-0.75 px-3 font-medium text-(--muted-foreground) transition-colors duration-100 hover:text-(--foreground)";
 
 const navLinkClass =
   "flex h-8 cursor-pointer items-center gap-0.75 px-3 font-medium leading-normal";
@@ -17,8 +18,23 @@ const signupLinkClass =
   "flex h-9 cursor-pointer items-center gap-0.75 rounded-full bg-(--primary) px-5 leading-normal text-(--primary-foreground) font-medium transition-colors duration-100 hover:bg-(--primary)/90";
 
 export const Header = () => {
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 h-(--header-height) w-full bg-background transition-all duration-300">
+    <header
+      className={`sticky top-0 z-40 h-(--header-height) w-full bg-background transition-all duration-300 ${isScrolled ? "after:content-[''] after:absolute after:h-px after:w-full after:bg-(--border) after:bottom-0" : ""}`}
+    >
       <div className="mx-auto flex h-full max-w-360 items-center justify-between px-8">
         <div className="flex items-center">
           <div className="flex items-center gap-2">
